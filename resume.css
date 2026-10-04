@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: dark;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #080608;
+  color: #f4f0eb;
+  --orange: #f15a24;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.resume-toolbar {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  display: flex;
+  min-height: 64px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px 6.2vw;
+  border-bottom: 1px solid rgba(244, 240, 235, 0.16);
+  background: #100d0e;
+}
+
+.resume-back,
+.resume-title {
+  color: inherit;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.resume-back:hover {
+  color: var(--orange);
+}
+
+.resume-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.resume-controls button {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(244, 240, 235, 0.24);
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  font-size: 18px;
+}
+
+.resume-controls button:hover:not(:disabled) {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.resume-controls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+#page-status,
+#zoom-status {
+  min-width: 48px;
+  color: #c5bdba;
+  font-size: 12px;
+  text-align: center;
+}
+
+.control-divider {
+  width: 1px;
+  height: 24px;
+  margin: 0 4px;
+  background: rgba(244, 240, 235, 0.2);
+}
+
+.resume-viewer {
+  display: grid;
+  min-height: calc(100vh - 64px);
+  justify-items: center;
+  align-content: start;
+  gap: 16px;
+  padding: 28px 16px 48px;
+}
+
+#resume-page {
+  display: none;
+  max-width: 100%;
+  height: auto;
+  background: #fff;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+}
+
+#resume-page.is-visible {
+  display: block;
+}
+
+.viewer-message {
+  margin: 24px 0 0;
+  color: #c5bdba;
+  font-size: 14px;
+  text-align: center;
+}
+
+.viewer-message:empty {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .resume-toolbar {
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    padding: 12px 16px;
+  }
+
+  .resume-title {
+    display: none;
+  }
+
+  .resume-controls {
+    gap: 7px;
+  }
+
+  .resume-viewer {
+    padding: 16px 8px 32px;
+  }
+}

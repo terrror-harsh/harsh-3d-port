@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080608" />
+    <title>Resume — Harsh Verma</title>
+    <link rel="stylesheet" href="./resume.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"
+      defer
+    ></script>
+    <script src="./resume.js" defer></script>
+  </head>
+  <body>
+    <header class="resume-toolbar">
+      <a class="resume-back" href="./index.html">← Back to portfolio</a>
+      <div class="resume-controls" aria-label="Resume controls">
+        <button id="previous-page" type="button" aria-label="Previous page" disabled>←</button>
+        <span id="page-status" aria-live="polite">Loading resume…</span>
+        <button id="next-page" type="button" aria-label="Next page" disabled>→</button>
+        <span class="control-divider" aria-hidden="true"></span>
+        <button id="zoom-out" type="button" aria-label="Zoom out" disabled>−</button>
+        <span id="zoom-status" aria-live="polite">100%</span>
+        <button id="zoom-in" type="button" aria-label="Zoom in" disabled>+</button>
+      </div>
+      <span class="resume-title">Harsh Verma · Resume</span>
+    </header>
+    <main class="resume-viewer">
+      <p id="viewer-message" class="viewer-message" role="status">Loading resume…</p>
+      <canvas id="resume-page" aria-label="Resume page"></canvas>
+    </main>
+  </body>
+</html>
